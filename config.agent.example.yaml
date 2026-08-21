@@ -1,0 +1,18 @@
+# Config for the AGENT BRIDGE — this file belongs on the Hyper-V VM,
+# not on the work laptop. Copy to config.agent.yaml and edit.
+
+bridge:
+  host: "0.0.0.0"        # the VM's host-only adapter; see docs/HYPER-V-SETUP.md
+  port: 8766
+  token: ""              # generate one: python -c "import secrets;print(secrets.token_urlsafe(32))"
+                         # must match agent.bridge_token in the laptop's config.yaml
+
+claude:
+  # Leave blank until you have run:  python -m jarvis_work.agent.spike_uia --write "test"
+  # The spike prints exactly what to paste here.
+  composer_automation_id: ""
+  composer_control_type: "EditControl"
+  composer_name: ""
+  new_chat_hotkey: "ctrl+n"
+  send_delay_seconds: 0.4
+  search_depth: 12

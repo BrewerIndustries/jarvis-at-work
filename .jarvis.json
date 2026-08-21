@@ -1,0 +1,9 @@
+{
+  "id": "jarvis-at-work",
+  "name": "Jarvis at Work",
+  "category": "jarvis-tools",
+  "description": "Windows work-machine assistant: an ambient daemon that watches what you're doing, keeps a work-item registry, exposes it all to Claude Desktop over MCP, and drives a second Claude Desktop instance on a Hyper-V VM via UI Automation so it can work without stealing your keyboard.",
+  "tech": ["Python", "FastAPI", "SQLite", "MCP", "Windows UI Automation", "pywin32", "Hyper-V"],
+  "platform": "windows",
+  "status": { "prod": "in_progress", "dev": "in_progress" }
+}
