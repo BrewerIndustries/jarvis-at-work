@@ -5,7 +5,7 @@ things you've handed it, hands all of that to Claude Desktop over MCP — and
 drives a *second* Claude Desktop on a VM so it can work without stealing your
 keyboard.
 
-It borrows the spine of [`jarvis`](../jarvis) (ambient loop, memory, proactivity)
+It borrows the spine of the home `jarvis` repo (ambient loop, memory, proactivity)
 but is a separate project: different OS, different threat model, no smart home,
 no wake word, and a different centre of gravity.
 
@@ -31,7 +31,7 @@ chat costs nothing** — which is what makes the filing question stop mattering.
 |---|---|
 | Daemon (store, observer loop, API) | Built, tested |
 | Redaction at capture | Built, tested |
-| MCP shim (8 tools) | Built, tested end-to-end over stdio |
+| MCP shim (9 tools) | Built, tested end-to-end over stdio |
 | Briefing composer | Built, tested |
 | Windows observer | Written, **not yet run on Windows** |
 | Brain (Sonnet→Opus routing) | Written, **not yet run against the live API** |
@@ -41,6 +41,13 @@ chat costs nothing** — which is what makes the filing question stop mattering.
 The critical unknown is whether Claude Desktop's Electron accessibility tree is
 rich enough to drive by named control. `jarvis_work/agent/spike_uia.py` answers
 that in about a minute, and everything on the VM side depends on the answer.
+
+## Picking this up on another machine
+
+[HANDOFF.md](HANDOFF.md) — written for whoever (or whatever) continues
+development from here: the decisions already settled, what's verified versus
+merely written, and the traps. [CLAUDE.md](CLAUDE.md) is the short version that
+loads automatically in Claude Code.
 
 ## Layout
 
@@ -76,6 +83,7 @@ VM: [docs/HYPER-V-SETUP.md](docs/HYPER-V-SETUP.md) — but run the spike first.
 | `list_work_items` | the registry |
 | `file_work_item` | record something without routing it |
 | `capture` | hand it over and let Jarvis decide what happens |
+| `update_work_item` | mark done/blocked, append a progress note |
 
 ## The brain
 
